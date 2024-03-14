@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             'MovieCatalog App',
             style: TextStyle(color: Colors.white),
           ),
-          backgroundColor: const Color.fromRGBO(12, 41, 65, 1),
+          backgroundColor: Color.fromARGB(255, 96, 3, 3),
         ),
         drawer: const MenuDrawer(),
         bottomNavigationBar: BottomNavigationBar(
@@ -48,9 +48,17 @@ class MyApp extends StatelessWidget {
               label: 'My Account',
             ),
           ],
-          unselectedItemColor: Colors.black,
-          selectedItemColor: Colors.black,
+          unselectedItemColor: const Color.fromARGB(255, 96, 3, 3),
+          selectedItemColor: const Color.fromARGB(255, 96, 3, 3),
           backgroundColor: Colors.blue,
+          onTap: (int index) {
+            if (index == 2 ) { 
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HindiGenre()),
+              );
+            }
+          },
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -65,7 +73,7 @@ class MyApp extends StatelessWidget {
                       );
                     },
                     child: Image.network(
-                      'https://res.cloudinary.com/dtvaexasg/image/upload/v1710393330/flutter/movie_1.jpg',
+                      'https://res.cloudinary.com/dhcvdux8e/image/upload/v1710443971/movie%20catalog/bastar.jpg',
                       height: 400,
                       width: 400,
                       fit: BoxFit.fill,
@@ -79,7 +87,21 @@ class MyApp extends StatelessWidget {
                       );
                     },
                     child: Image.network(
-                      'https://res.cloudinary.com/dtvaexasg/image/upload/v1710393546/flutter/movie_2.jpg',
+                      'https://res.cloudinary.com/dhcvdux8e/image/upload/f_auto,q_auto/v1/movie%20catalog/teri%20batoon',
+                      height: 400,
+                      width: 400,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HindiGenre()),
+                      );
+                    },
+                    child: Image.network(
+                      'https://miro.medium.com/v2/resize:fit:1400/1*dp9v_9BHhTwq6DPsFy84aw.jpeg',
                       height: 400,
                       width: 400,
                       fit: BoxFit.fill,
@@ -100,7 +122,7 @@ class MyApp extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   children: [
                     _buildCategoryItem('Action',
-                        'https://res.cloudinary.com/dtvaexasg/image/upload/v1710396367/flutter/hindi.png',
+                        'https://res.cloudinary.com/dhcvdux8e/image/upload/f_auto,q_auto/v1/movie%20catalog/netflix',
                         () {
                       Navigator.push(
                         context,
@@ -108,7 +130,7 @@ class MyApp extends StatelessWidget {
                       );
                     }),
                     _buildCategoryItem('Comedy',
-                        'https://res.cloudinary.com/dtvaexasg/image/upload/v1710397585/flutter/english.png',
+                        'https://res.cloudinary.com/dhcvdux8e/image/upload/movie%20catalog/prime.jpg',
                         () {
                       Navigator.push(
                         context,
@@ -116,7 +138,7 @@ class MyApp extends StatelessWidget {
                       );
                     }),
                     _buildCategoryItem('Drama',
-                        'https://res.cloudinary.com/dtvaexasg/image/upload/v1710397708/flutter/punjabi.png',
+                        'https://res.cloudinary.com/dhcvdux8e/image/upload/movie%20catalog/chaupal.jpg',
                         () {
                       Navigator.push(
                         context,
@@ -124,7 +146,7 @@ class MyApp extends StatelessWidget {
                       );
                     }),
                     _buildCategoryItem('Thriller',
-                        'https://res.cloudinary.com/dtvaexasg/image/upload/v1710397709/flutter/gujrati.png',
+                        'https://res.cloudinary.com/dhcvdux8e/image/upload/movie%20catalog/zee5.jpg',
                         () {
                       Navigator.push(
                         context,
@@ -132,13 +154,14 @@ class MyApp extends StatelessWidget {
                       );
                     }),
                     _buildCategoryItem('Horror',
-                        'https://res.cloudinary.com/dtvaexasg/image/upload/v1710397711/flutter/telugu.png',
+                        'https://res.cloudinary.com/dhcvdux8e/image/upload/movie%20catalog/sony%20liv.jpg',
                         () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => HindiGenre()),
                       );
                     }),
+                    
                   ],
                 ),
               ),

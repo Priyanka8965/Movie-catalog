@@ -11,12 +11,15 @@ class MenuDrawer extends StatelessWidget {
       child: ListView(
         children: [
           const UserAccountsDrawerHeader(
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 140, 13, 13),
+            ),
             accountName: Text(
-              'Sanyam',
+              'Priyanka',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            accountEmail: Text('testmail@gmail.com'),
-            currentAccountPicture: FlutterLogo(),
+            accountEmail: Text('moviecatalog@gmail.com'),
+            currentAccountPicture: CircleAvatar(),
           ),
           ListTile(
             leading: const Icon(Icons.home, color: Colors.white),
